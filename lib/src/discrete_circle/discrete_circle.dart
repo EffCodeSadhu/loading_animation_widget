@@ -37,8 +37,8 @@ class _DiscreteCircleState extends State<DiscreteCircle>
     final Color color = widget.color;
     final double size = widget.size;
     final double strokeWidth = size / 8;
-    final Color secondRingColor = widget.secondCircleColor;
-    final Color thirdRingColor = widget.thirdCircleColor;
+    // final Color secondRingColor = widget.secondCircleColor;
+    // final Color thirdRingColor = widget.thirdCircleColor;
     return AnimatedBuilder(
       animation: _animationController,
       builder: (_, __) {
@@ -60,7 +60,7 @@ class _DiscreteCircleState extends State<DiscreteCircle>
               child: Visibility(
                 visible: _animationController.value >= 0.5,
                 child: Arc.draw(
-                  color: thirdRingColor,
+                  color: color,
                   size: size,
                   strokeWidth: strokeWidth,
                   startAngle: -math.pi / 2,
@@ -85,7 +85,7 @@ class _DiscreteCircleState extends State<DiscreteCircle>
             Visibility(
               visible: _animationController.value >= 0.5,
               child: Arc.draw(
-                color: secondRingColor,
+                color: color,
                 size: size,
                 strokeWidth: strokeWidth,
                 startAngle: -math.pi / 2,
